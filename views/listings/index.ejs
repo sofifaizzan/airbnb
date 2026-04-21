@@ -1,0 +1,38 @@
+
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <h1>all listings</h1>
+
+    <!-- <form method="get" action="/listings/add/new"><button type="submit">new</button></form> -->
+   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% if(!allListings[0]){ %>
+        <h3>No listing is available</h3>
+    <%  }%>
+        <% for(let listing of allListings){ %>
+          
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+            <div class="card cols listing-cards">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listingimg" style="height: 20rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                <p class="card-text">
+                   <b> <%= listing.title %> <br></b>
+                    &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+                </p>
+                </div>
+            </div>
+        </a>
+        <%}%>
+   </div>
+  <!-- <script>
+    let s = "<%#=success%>"
+
+    
+    if(s){
+        alert(s)
+        console.log("ss")
+    }
+  </script> -->
+  
+</body>
+</html>

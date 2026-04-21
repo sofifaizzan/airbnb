@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <h1>Edit Listing</h1>
+    <!-- <form  method="post">
+        <br>
+        <input type="text" name="Listing[title]" id=""  placeholder="title">
+        <br>
+        <textarea name="Listing[description]" id="" value="<%=listing.description%>" placeholder="description"><%=listing.description%></textarea>
+        <br>
+        <input type="text" name="Listing[image]" id="" value="<%=listing.image%>" placeholder="enter img url link">
+        <br>
+        <input type="number" name="Listing[price]" id="" value="<%=listing.price%>" placeholder="enter price ">
+        <br>
+        
+        <input type="text" name="Listing[location]" id="" value="<%=listing.location%>" placeholder="location">
+        <br>
+        <input type="text" name="Listing[country]" id="" value="<%=listing.country%>" placeholder="country">
+        <br>
+        <button type="submit">add</button>
+    </form> -->
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form action="/listings/<%=listing._id%>" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="Title" class="form-label">Title</label>
+                    <input type="text" name="Listing[title]" id="Title" value="<%=listing.title%>" placeholder="title" class="form-control">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">description</label>          
+                    <textarea name="Listing[description]" id="description" placeholder="description" class="form-control"><%=listing.description%></textarea>
+                </div>
+                <div class="mb-3">
+                    <img src="<%= orginalImageUrl %>" alt="" class="">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">upload new image</label>
+                    <input type="file" name="Listing[image]" id="image" placeholder="enter img url link" class="form-control">
+                </div>
+    
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">price</label>
+                        <input type="number" name="Listing[price]" value="<%=listing.price%>" id="price" placeholder="enter price " class="form-control">
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">country</label>
+                        <input type="text" name="Listing[country]" value="<%=listing.country%>" id="india" placeholder="country" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="location" class="form-label">location</label>
+                    <input type="text" name="Listing[location]" value="<%=listing.location%>" id="location" placeholder="location" class="form-control">
+                </div>
+                
+                <button type="submit" class="btn btn-dark edit-btn">add</button>
+            </form>
+        </div>
+        </div>
+</body>
+</html>
