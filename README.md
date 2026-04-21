@@ -23,12 +23,19 @@ Version Control: Git & GitHub
 
 
 Project Structure
+
 ├── models  Database models
+
 ├── routes  Express routes
+
 ├── views  EJS templates
+
 ├── public  Static files (CSS, JS, images)
+
 ├── middleware  Custom middleware
+
 ├── app.js  Main server file
+
 
 
 
